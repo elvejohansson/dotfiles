@@ -3,6 +3,7 @@ clear
 
 # Enviroment variables
 EDITOR=nvim
+TERM=alacritty
 export GPG_TTY=$(tty)
 export PATH="$PATH:$HOME/.local/bin"
 
