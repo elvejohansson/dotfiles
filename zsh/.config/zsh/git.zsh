@@ -1,9 +1,7 @@
 autoload -Uz vcs_info
-precmd() { vcs_info }
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
 
-# Very crude way of detecting git directory, needs to be reworked
-if [ -d .git ]; then
-  zstyle ':vcs_info:git:*' formats $'%F{blue}\Ue0a0%f %F{green}%b%f'
-fi
+zstyle ':vcs_info:git:*' formats $'on branch %b'
 
-setopt PROMPT_SUBST
