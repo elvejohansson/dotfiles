@@ -1,0 +1,22 @@
+set $mod Mod4
+
+#for_window [class=".*"] border pixel 0
+
+bindsym $mod+Return exec alacritty
+bindsym $mod+q kill
+bindsym $mod+d exec dmenu_run
+bindsym $mod+Shift+c reload
+
+# Focus and splitting
+bindsym $mod+f fullscreen
+
+# Wallpaper
+exec --no-startup-id nitrogen --set-auto $HOME/.config/wallpaper.jpg --head=0
+
+# Gaps
+# gaps inner 20
+# gaps outer 5
+
+# Font
+font pango:Monaco 10
+
