@@ -5,6 +5,7 @@ These are my dotfiles for all my configured applications and tools that I run on
 ## Setup
 
 A few things about my setup; I want it to be as powerful as possible, but at the same time be as minimal and portable as possible.
+
 I used to use a bare Git-repo in my home folder, but this got very cluttered very fast, so I started looking for a better solution. This version uses the GNU Stow utility to "stow" all of my files in this repo to my home folder, which is why the folder structure is a bit wonky. This gives me the power to choose exactly how I want my folder to look, but I can seperate it to another folder and version control it. This also means that I or any other person can clone this repo and pick and choose exactly which config's they want to use: win-win!
 
 ## Install
