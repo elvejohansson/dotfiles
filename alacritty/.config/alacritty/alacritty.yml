@@ -42,6 +42,9 @@ window:
   # Spread
   dynamic_padding: false
 
+  # Opacity
+  opacity: 0.9
+
   # Window decorations
   #
   # Values for `decorations`:
