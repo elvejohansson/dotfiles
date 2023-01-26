@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font
-font pango:Monaco 8
+font pango:Monaco 9
 
 # Keyboard layout
 exec_always "setxkbmap -model pc105 -layout se -variant ,, -option grp:alt_shift_toggle"
@@ -19,6 +19,9 @@ exec --no-startup-id feh --bg-scale ~/.config/i3/wallpapers/cyberpunk.jpg
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+# Turn off screensaving and stuff
+exec --no-startup-id xset s off -dpms
 
 # Gaps
 default_border pixel 0
@@ -155,4 +158,5 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position top
 }
