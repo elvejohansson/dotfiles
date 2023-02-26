@@ -1,11 +1,17 @@
-# Clear terminal when starting a new shell
-clear
-
 # Enviroment variables
 EDITOR=nvim
-TERM=alacritty
+#TERM=alacritty
+#export TERMINFO=/usr/share/terminfo
 export GPG_TTY=$(tty)
 export PATH="$PATH:$HOME/.local/bin"
+export NVM_DIR="$HOME/.nvm"
+if [[ $(uname) == "Darwin" ]] then
+  # We are running MacOS
+  export PATH="/opt/homebrew/bin:$PATH"
+fi
+
+# Clear terminal when starting a new shell
+# clear
 
 # Colors
 autoload -Uz colors && colors
@@ -39,3 +45,7 @@ export KEYTIMEOUT=1
 
 # Plugins
 [ -f "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# NVM
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+

@@ -25,6 +25,15 @@ alias gd="g diff"
 
 
 ##############################
+#         Kubernetes         #
+##############################
+alias get-clusters="kubectl config get-contexts"
+alias set-cluster="kubectl config use-context"
+alias get-pods="kubectl get pods -A"
+
+
+
+##############################
 #        Pacman & AUR        #
 ##############################
 alias pacin="sudo pacman -S"

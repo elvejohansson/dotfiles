@@ -1,1 +1,6 @@
+# Mac misc.
 .DS_Store
+
+# ZSH
+**/.zcompdump
+
