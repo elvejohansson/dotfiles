@@ -10,17 +10,13 @@ alias ealias="$EDITOR $ZDOTDIR/alias.zsh"
 ##############################
 #             Git            #
 ##############################
-alias g="git"
-alias gs="g status"
-alias gc="g commit -m"
-alias ga="g add"
-alias gf="g fetch"
-alias gm="g merge"
-alias gp="g push"
-alias gb="g branch"
-alias gch="g checkout"
-alias gcb="g checkout -b"
-alias gd="g diff"
+alias gs="git status"
+alias ga="git add"
+alias gaa="git add -A"
+alias gb="git branch -a"
+alias gc="git commit -m"
+alias gd="git diff HEAD"
+alias gprune="git fetch --prune origin"
 
 
 
