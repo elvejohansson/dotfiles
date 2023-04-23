@@ -10,8 +10,8 @@ if [[ $(uname) == "Darwin" ]] then
   export PATH="/opt/homebrew/bin:$PATH"
 fi
 
-# Clear terminal when starting a new shell
-# clear
+# Go
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 # Colors
 autoload -Uz colors && colors
@@ -33,10 +33,6 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
-
-# Vi mode
-bindkey -v
-export KEYTIMEOUT=1
 
 # Check if sources exist and them source them
 [ -f "$ZDOTDIR/alias.zsh" ] && source $ZDOTDIR/alias.zsh
