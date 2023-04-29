@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
         "williamboman/mason.nvim",
         run = ":MasonUpdate" -- :MasonUpdate updates registry contents
     })
-    
+
     use({
         'williamboman/mason-lspconfig.nvim',
         config = function() require('plugins.mason-lspconfig') end,
@@ -37,8 +37,15 @@ return require('packer').startup(function(use)
         'neovim/nvim-lspconfig',
     })
 
+    use 'lewis6991/gitsigns.nvim'
+
+    use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+    use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+    use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+    use 'L3MON4D3/LuaSnip' -- Snippets plugin 
+
     use { "catppuccin/nvim", as = "catppuccin" }
-    
+
     if packer_bootstrap then
         require('packer').sync()
     end

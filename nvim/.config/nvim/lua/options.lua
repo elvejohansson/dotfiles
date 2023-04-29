@@ -14,3 +14,5 @@ vim.opt.smartindent = true
 
 vim.opt.termguicolors = true
 vim.opt.showmode = false
+
+vim.opt.signcolumn = 'yes'

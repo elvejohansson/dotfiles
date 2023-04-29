@@ -1,11 +1,10 @@
-
-
 -- Load config files
 require('plugins')
 require('mappings')
 require('options')
 require('lsp')
 require('theme')
+require('git')
 
 
 vim.cmd([[
