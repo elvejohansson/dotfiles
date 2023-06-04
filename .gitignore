@@ -5,3 +5,7 @@
 **/.zcompdump
 **/.zsh_history
 **/.zsh_sessions/
+
+# Bash
+**/.bash_history
+
