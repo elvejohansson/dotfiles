@@ -15,7 +15,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id picom &
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale ~/.config/i3/wallpapers/cyberpunk.jpg
+exec --no-startup-id feh --bg-scale ~/.config/i3/wallpapers/wallpaper.jpg
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

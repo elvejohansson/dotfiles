@@ -51,5 +51,6 @@ fi
 xset s off
 xset -dpms
 xset s noblank
+xset r rate 200 35
 
 exec i3
