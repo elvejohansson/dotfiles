@@ -1,18 +1,29 @@
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 10
+local opt = vim.o
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+-- [[ Line rendering ]]
+opt.colorcolumn = 80       -- Show column for max line length
+opt.number = true          -- Show line numbers
+opt.relativenumber = true  -- Show relative line numbers
+opt.scrolloff = 10         -- No. of context line around cursor
+opt.signcolumn = "no"      -- Should we show the signcolumn?
 
-vim.opt.undofile = true
+-- [[ Filetypes ]]
+opt.encoding = "utf8"      -- Set character encoding
+opt.fileencoding = "utf8"  -- Set file endcoding
 
-vim.opt.autoindent = true
-vim.opt.smartindent = true
+-- [[ Theme/colors ]]
+opt.syntax = "ON"  -- Enable syntax highlighting
 
-vim.opt.termguicolors = true
-vim.opt.showmode = false
+-- [[ Search ]]
+opt.ignorecase = true  -- Ignore casing in search pattern
+opt.smartcase = true   -- Override ignorecase if search contains capitals
+opt.incsearch = true   -- Turn on incremental search
+opt.hlsearch = true    -- Hightlight search matches
 
-vim.opt.signcolumn = 'yes'
+-- [[ Whitespace ]]
+opt.expandtab = true    -- Use spaces instead of tabs
+opt.shiftwidth = true   -- Set size of indentation
+opt.tabstop = 4         -- Number of spaces tabs count for
+opt.softtabstop = 4     -- -||-, but for insert mode
+opt.autoindent = true   -- Use indent from previous line
+opt.smartindent = true  -- Use "smart" (aka C) indent

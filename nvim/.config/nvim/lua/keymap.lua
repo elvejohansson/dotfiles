@@ -1,7 +1,9 @@
 vim.g.mapleader = " "
 
+-- [[ Keybinds ]]
 vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
 
+-- [[ Hard mode ]]
 vim.keymap.set('n', '<up>', '<nop>')
 vim.keymap.set('n', '<down>', '<nop>')
 vim.keymap.set('n', '<left>', '<nop>')
@@ -11,9 +13,3 @@ vim.keymap.set('i', '<down>', '<nop>')
 vim.keymap.set('i', '<left>', '<nop>')
 vim.keymap.set('i', '<right>', '<nop>')
 
-vim.keymap.set('n', '<leader>PS', '<Cmd>PackerSync<CR>')
-
-vim.keymap.set("n", "<leader>M", "<Cmd>Mason<CR>", { silent = true })
-
--- LSP
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
