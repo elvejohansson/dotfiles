@@ -5,7 +5,7 @@ opt.colorcolumn = 80       -- Show column for max line length
 opt.number = true          -- Show line numbers
 opt.relativenumber = true  -- Show relative line numbers
 opt.scrolloff = 10         -- No. of context line around cursor
-opt.signcolumn = "no"      -- Should we show the signcolumn?
+opt.signcolumn = "yes"     -- Should we show the signcolumn?
 
 -- [[ Filetypes ]]
 opt.encoding = "utf8"      -- Set character encoding
@@ -26,4 +26,4 @@ opt.shiftwidth = true   -- Set size of indentation
 opt.tabstop = 4         -- Number of spaces tabs count for
 opt.softtabstop = 4     -- -||-, but for insert mode
 opt.autoindent = true   -- Use indent from previous line
-opt.smartindent = true  -- Use "smart" (aka C) indent
+--opt.smartindent = true  -- Use "smart" (aka C) indent
