@@ -4,7 +4,7 @@ local opt = vim.o
 opt.colorcolumn = 80       -- Show column for max line length
 opt.number = true          -- Show line numbers
 opt.relativenumber = true  -- Show relative line numbers
-opt.scrolloff = 10         -- No. of context line around cursor
+opt.scrolloff = 999        -- No. of context line around cursor
 opt.signcolumn = "yes"     -- Should we show the signcolumn?
 
 -- [[ Filetypes ]]

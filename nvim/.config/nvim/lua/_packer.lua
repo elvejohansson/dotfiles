@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
 
   use('github/copilot.vim')
 
+  use ('williamboman/mason.nvim')
+
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',

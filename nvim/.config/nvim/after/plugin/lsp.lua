@@ -1,5 +1,6 @@
 local lsp = require('lsp-zero').preset({})
 
+require("mason").setup()
 
 lsp.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
