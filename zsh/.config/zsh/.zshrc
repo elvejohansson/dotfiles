@@ -13,6 +13,8 @@ fi
 # Go
 export PATH="$PATH:$(go env GOPATH)/bin"
 
+export PATH="$PATH:$HOME/.bun/bin"
+
 # Colors
 autoload -Uz colors && colors
 
