@@ -10,9 +10,6 @@
 # to the user's home directory starting with `~/`.
 #import:
 #  - /path/to/alacritty.yml
-import:
-  - ~/.config/alacritty/themes/rose-pine.yml
-  
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -46,7 +43,7 @@ window:
   dynamic_padding: false
 
   # Opacity
-  opacity: 1
+  opacity: 1.0
 
   # Window decorations
   #
@@ -146,7 +143,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 14
+  size: 15
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -166,9 +163,9 @@ font:
 draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night)
-colors:
+# colors:
   # Default colors
-  primary:
+  # primary:
     #background: '#1b1814'
     #foreground: '#d8d1c9'
 
