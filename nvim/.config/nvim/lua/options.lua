@@ -5,7 +5,7 @@ opt.colorcolumn = 80      -- Show column for max line length
 opt.number = true         -- Show line numbers
 opt.relativenumber = true -- Show relative line numbers
 opt.scrolloff = 999       -- No. of context line around cursor
-opt.signcolumn = "no"     -- Should we show the signcolumn?
+opt.signcolumn = "yes"    -- Should we show the signcolumn?
 
 -- [[ Filetypes ]]
 opt.encoding = "utf8"     -- Set character encoding
