@@ -17,6 +17,7 @@ return {
           "javascript",
           "rust",
           "markdown",
+          "markdown_inline",
           "python",
           "regex",
           "yaml",
@@ -26,7 +27,10 @@ return {
         highlight = {
           enable = true,
         },
+        indent = {
+          enable = true,
+        },
       })
-    end
+    end,
   },
 }

@@ -1,10 +1,10 @@
 return {
   {
-    "EdenEast/nightfox.nvim",
-    lazy = false,
+    "ellisonleao/gruvbox.nvim",
     priority = 1000,
+    config = true,
     config = function()
-      vim.cmd([[colorscheme nightfox]])
+      vim.cmd([[colorscheme gruvbox]])
     end,
   },
 }

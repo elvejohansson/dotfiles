@@ -1,11 +1,11 @@
 local opt = vim.o
 
 -- [[ Line rendering ]]
-opt.colorcolumn = 80      -- Show column for max line length
+-- opt.colorcolumn = "0"  -- Show column for max line length
 opt.number = true         -- Show line numbers
 opt.relativenumber = true -- Show relative line numbers
 opt.scrolloff = 999       -- No. of context line around cursor
-opt.signcolumn = "yes"    -- Should we show the signcolumn?
+opt.signcolumn = "no"     -- Should we show the signcolumn?
 
 -- [[ Filetypes ]]
 opt.encoding = "utf8"     -- Set character encoding
@@ -13,7 +13,7 @@ opt.fileencoding = "utf8" -- Set file endcoding
 
 -- [[ Theme/colors ]]
 opt.syntax = "ON"        -- Enable syntax highlighting
-opt.termguicolors = true -- ?
+opt.termguicolors = true -- Enable 24-bit color in TUI
 
 -- [[ Search ]]
 opt.ignorecase = true -- Ignore casing in search pattern
