@@ -2,6 +2,7 @@
 # Style: nightfox
 # Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox/nightfox_alacritty.yml
 colors:
+  transparent_background_colors: true
   # Default colors
   primary:
     background: '0x192330'
