@@ -8,6 +8,7 @@ export NVM_DIR="$HOME/.nvm"
 if [[ $(uname) == "Darwin" ]] then
   # We are running MacOS
   export PATH="/opt/homebrew/bin:$PATH"
+  export PATH="$PATH:/Users/elve/Library/Application Support/Coursier/bin"
 fi
 
 # Go
@@ -47,3 +48,4 @@ _comp_options+=(globdots)
 # NVM
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+[ -f "/Users/elve/.ghcup/env" ] && source "/Users/elve/.ghcup/env" # ghcup-env

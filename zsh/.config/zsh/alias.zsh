@@ -14,7 +14,7 @@ alias gs="git status"
 alias ga="git add"
 alias gaa="git add -A"
 alias gb="git branch -a"
-alias gc="git commit -m"
+alias gc="git commit -s"
 alias gd="git diff HEAD"
 alias gprune="git fetch --prune origin"
 
