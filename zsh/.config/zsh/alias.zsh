@@ -16,6 +16,7 @@ alias gaa="git add -A"
 alias gb="git branch -a"
 alias gc="git commit -s"
 alias gd="git diff HEAD"
+alias gds="git diff HEAD --staged"
 alias gprune="git fetch --prune origin"
 
 

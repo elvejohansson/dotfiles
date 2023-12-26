@@ -2,9 +2,13 @@
 EDITOR=nvim
 #TERM=alacritty
 #export TERMINFO=/usr/share/terminfo
+export XDG_CONFIG_HOME="$HOME/.config"
+
 export GPG_TTY=$(tty)
 export PATH="$PATH:$HOME/.local/bin"
 export NVM_DIR="$HOME/.nvm"
+
+# Darwin specific exports
 if [[ $(uname) == "Darwin" ]] then
   # We are running MacOS
   export PATH="/opt/homebrew/bin:$PATH"
