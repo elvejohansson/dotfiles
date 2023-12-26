@@ -8,7 +8,13 @@ export NVM_DIR="$HOME/.nvm"
 if [[ $(uname) == "Darwin" ]] then
   # We are running MacOS
   export PATH="/opt/homebrew/bin:$PATH"
+  export PATH="/opt/homebrew/opt:$PATH"
+  export PATH="/opt/homebrew/include:$PATH"
   export PATH="$PATH:/Users/elve/Library/Application Support/Coursier/bin"
+
+  export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
+
+  export ANDROID_HOME="/Users/elve/Library/Android/sdk"
 fi
 
 # Go
