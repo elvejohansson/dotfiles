@@ -11,7 +11,7 @@
 #import:
 #  - /path/to/alacritty.yml
 import:
-  - ~/.config/alacritty/themes/catppuccin-mocha.yaml
+  - ~/.config/alacritty/themes/mellow.yaml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -45,7 +45,7 @@ window:
   dynamic_padding: false
 
   # Opacity
-  opacity: 0.95
+  opacity: 1
 
   # Window decorations
   #
