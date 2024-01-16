@@ -20,6 +20,20 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     "tpope/vim-sleuth",
+
+    {
+        "f-person/git-blame.nvim",
+        opts = {
+            enabled = true,
+            delay = 250,
+        },
+    },
+
+    {
+        "lewis6991/gitsigns.nvim",
+        opts = {},
+    },
+
     {
         "mellow-theme/mellow.nvim",
         name = "mellow",
@@ -28,17 +42,23 @@ require("lazy").setup({
             vim.cmd([[colorscheme mellow]])
         end,
     },
+
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = "kyazdani42/nvim-web-devicons",
+        dependencies = {
+            "kyazdani42/nvim-web-devicons",
+        },
         config = true,
         opts = {}
 
     },
+
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.5",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        dependencies = {
+            "nvim-lua/plenary.nvim"
+        },
         config = function()
             local builtin = require("telescope.builtin")
             vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
@@ -50,6 +70,7 @@ require("lazy").setup({
             vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
         end
     },
+
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
