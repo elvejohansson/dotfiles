@@ -22,6 +22,20 @@ require("lazy").setup({
     "tpope/vim-sleuth",
 
     {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {
+            indent = {
+                char = "▏",
+                smart_indent_cap = true,
+            },
+            scope = {
+                enabled = true,
+            },
+        },
+    },
+
+    {
         "f-person/git-blame.nvim",
         opts = {
             enabled = true,
@@ -54,6 +68,14 @@ require("lazy").setup({
     },
 
     {
+        "folke/todo-comments.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim"
+        },
+        opts = {},
+    },
+
+    {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.5",
         dependencies = {
@@ -74,36 +96,34 @@ require("lazy").setup({
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        config = function()
-            require("nvim-treesitter.configs").setup({
-                ensure_installed = {
-                    "c",
-                    "lua",
-                    "vim",
-                    "vimdoc",
-                    "query",
-                    "json",
-                    "html",
-                    "css",
-                    "typescript",
-                    "javascript",
-                    "rust",
-                    "markdown",
-                    "markdown_inline",
-                    "python",
-                    "regex",
-                    "yaml",
-                },
-                auto_install = true, -- Needs `tree-sitter` CLI locally
+        opts = {
+            ensure_installed = {
+                "c",
+                "lua",
+                "vim",
+                "vimdoc",
+                "query",
+                "json",
+                "html",
+                "css",
+                "typescript",
+                "javascript",
+                "rust",
+                "markdown",
+                "markdown_inline",
+                "python",
+                "regex",
+                "yaml",
+            },
+            auto_install = true, -- Needs `tree-sitter` CLI locally
 
-                highlight = {
-                    enable = true,
-                },
-                indent = {
-                    enable = true,
-                },
-            })
-        end,
+            highlight = {
+                enable = true,
+            },
+            indent = {
+                enable = true,
+            },
+        },
     },
 })
 
@@ -121,11 +141,12 @@ opt.smartcase = true      -- Override ignorecase if search contains capitals
 opt.incsearch = true      -- Turn on incremental search
 opt.hlsearch = true       -- Hightlight search matches
 opt.expandtab = true      -- Use spaces instead of tabs
-opt.shiftwidth = true     -- Set size of indentation
+opt.shiftwidth = 4        -- Set size of indentation
 opt.tabstop = 2           -- Number of spaces tabs count for
 opt.softtabstop = 2       -- -||-, but for insert mode
 opt.autoindent = true     -- Use indent from previous line
 opt.smartindent = true    -- Use "smart" (aka C) indent
+opt.signcolumn = "yes"    -- Always show signcolumn
 
 
 -- [[ Hard mode ]]
