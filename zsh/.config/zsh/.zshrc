@@ -7,6 +7,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export GPG_TTY=$(tty)
 export PATH="$PATH:$HOME/.local/bin"
 export NVM_DIR="$HOME/.nvm"
+export AWS_PROFILE="default"
 
 # Darwin specific exports
 if [[ $(uname) == "Darwin" ]] then
@@ -14,6 +15,8 @@ if [[ $(uname) == "Darwin" ]] then
   export PATH="/opt/homebrew/bin:$PATH"
   export PATH="/opt/homebrew/opt:$PATH"
   export PATH="/opt/homebrew/include:$PATH"
+  export HOMEBREW_NO_AUTO_UPDATE=1
+
   export PATH="$PATH:/Users/elve/Library/Application Support/Coursier/bin"
 
   export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"

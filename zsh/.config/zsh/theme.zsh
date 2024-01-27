@@ -1,3 +1,1 @@
-PROMPT='elve %~ ${vcs_info_msg_0_} > '
-
-RPROMPT='%B%F{red}%T%f%b'
+PROMPT='elve %B%~%b${vcs_info_msg_0_} $ '
