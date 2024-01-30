@@ -22,6 +22,21 @@ require("lazy").setup({
     "tpope/vim-sleuth",
 
     {
+        "laytan/cloak.nvim",
+        opts = {
+            enabled = true,
+            cloak_character = "*",
+            patterns = {
+                {
+                    file_pattern = ".env*",
+                    cloak_pattern = "=.+",
+                    replace = nil,
+                },
+            },
+        },
+    },
+
+    {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         opts = {
@@ -64,7 +79,6 @@ require("lazy").setup({
         },
         config = true,
         opts = {}
-
     },
 
     {

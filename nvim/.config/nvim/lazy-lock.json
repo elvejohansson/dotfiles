@@ -1,4 +1,5 @@
 {
+  "cloak.nvim": { "branch": "main", "commit": "951b163e55ce7639eb320c450bde9283c4fe968b" },
   "git-blame.nvim": { "branch": "master", "commit": "f07e913b7143f19edd6787229f2d51759b478600" },
   "gitsigns.nvim": { "branch": "main", "commit": "4aaacbf5e5e2218fd05eb75703fe9e0f85335803" },
   "indent-blankline.nvim": { "branch": "master", "commit": "12e92044d313c54c438bd786d11684c88f6f78cd" },
