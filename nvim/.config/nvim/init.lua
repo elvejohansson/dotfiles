@@ -111,26 +111,8 @@ require("lazy").setup({
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         opts = {
-            ensure_installed = {
-                "c",
-                "lua",
-                "vim",
-                "vimdoc",
-                "query",
-                "json",
-                "html",
-                "css",
-                "typescript",
-                "javascript",
-                "rust",
-                "markdown",
-                "markdown_inline",
-                "python",
-                "regex",
-                "yaml",
-            },
+            ensure_installed = { "c", "lua", "vimdoc", "json", "yaml" },
             auto_install = true, -- Needs `tree-sitter` CLI locally
-
             highlight = {
                 enable = true,
             },
@@ -138,6 +120,13 @@ require("lazy").setup({
                 enable = true,
             },
         },
+    },
+
+    {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+        "folke/neodev.nvim",
     },
 })
 
@@ -176,3 +165,31 @@ vim.keymap.set("i", "<right>", "<nop>")
 -- [[ Keybinds ]]
 vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
 
+
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+require("neodev").setup({})
+
+require("mason-lspconfig").setup_handlers({
+    --  default handler, will be called for each installed
+    --  server that doesnt have a dedicated handler
+    function(server_name)
+        require("lspconfig")[server_name].setup({})
+    end
+})
+
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+
+    callback = function(ev)
+        local opts = { buffer = ev.buf }
+
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+        vim.keymap.set("n", "gR", vim.lsp.buf.rename, opts)
+    end,
+})
