@@ -123,10 +123,21 @@ require("lazy").setup({
     },
 
     {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
-        "folke/neodev.nvim",
+        init_options = {
+            eelixir = "html-eex",
+            eruby = "erb",
+            rust = "html",
+        },
+        dependencies = {
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+            "folke/neodev.nvim",
+            "hrsh7th/nvim-cmp",
+            "hrsh7th/cmp-vsnip",
+            "hrsh7th/vim-vsnip",
+            "hrsh7th/cmp-nvim-lsp",
+        }
     },
 })
 
@@ -165,17 +176,42 @@ vim.keymap.set("i", "<right>", "<nop>")
 -- [[ Keybinds ]]
 vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
 
+local cmp = require("cmp")
+
+cmp.setup({
+    snippet = {
+        expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+        end,
+    },
+    window = {},
+    mapping = cmp.mapping.preset.insert({
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-e>"] = cmp.mapping.abort(),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    }),
+    sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "vsnip" },
+    }, {
+        { name = "buffer" },
+    }),
+})
 
 require("mason").setup()
 require("mason-lspconfig").setup()
 
 require("neodev").setup({})
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 require("mason-lspconfig").setup_handlers({
     --  default handler, will be called for each installed
     --  server that doesnt have a dedicated handler
     function(server_name)
-        require("lspconfig")[server_name].setup({})
+        require("lspconfig")[server_name].setup({
+           capabilities = capabilities
+        })
     end
 })
 
@@ -191,5 +227,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
         vim.keymap.set("n", "gR", vim.lsp.buf.rename, opts)
+        vim.keymap.set("n", "gF", vim.lsp.buf.code_action, opts)
     end,
 })
