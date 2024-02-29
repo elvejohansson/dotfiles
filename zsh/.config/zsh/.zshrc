@@ -8,11 +8,13 @@ export GPG_TTY=$(tty)
 export PATH="$PATH:$HOME/.local/bin"
 export NVM_DIR="$HOME/.nvm"
 export AWS_PROFILE="default"
+export KUBE_CONFIG_PATH="$HOME/.kube/config"
 
 # Darwin specific exports
 if [[ $(uname) == "Darwin" ]] then
   # We are running MacOS
   export PATH="/opt/homebrew/bin:$PATH"
+  export PATH="/opt/homebrew/sbin:$PATH"
   export PATH="/opt/homebrew/opt:$PATH"
   export PATH="/opt/homebrew/include:$PATH"
   export HOMEBREW_NO_AUTO_UPDATE=1
