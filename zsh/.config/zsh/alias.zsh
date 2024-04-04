@@ -1,15 +1,9 @@
-##############################
-#             ZSH            #
-##############################
+# Zsh
 alias rconf="source $ZDOTDIR/.zshrc"
 alias econf="$EDITOR $ZDOTDIR/.zshrc"
 alias ealias="$EDITOR $ZDOTDIR/alias.zsh"
 
-
-
-##############################
-#             Git            #
-##############################
+# Git
 alias gs="git status"
 alias ga="git add"
 alias gaa="git add -A"
@@ -19,37 +13,26 @@ alias gd="git diff HEAD"
 alias gds="git diff HEAD --staged"
 alias gprune="git fetch --prune origin"
 
-
-
-##############################
-#         Kubernetes         #
-##############################
+# Kubernetes
 alias get-clusters="kubectl config get-contexts"
 alias set-cluster="kubectl config use-context"
 alias get-pods="kubectl get pods -A"
 
+# Terraform
+alias tfi="terraform init"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
 
-
-##############################
-#        Pacman & AUR        #
-##############################
+# Pacman & AUR
 alias pacin="sudo pacman -S"
 alias pacrm="sudo pacman -Rns"
 alias pacup="sudo pacman -Syyu"
 alias pacop="pacman -Qtd"
 
-
-
-##############################
-#   Directories & movement   #
-##############################
+# Directories etc.
 alias ls=" ls -alh --color=auto"
 alias ..=" cd .."
 alias ...=" cd ../.."
 
-
-
-##############################
-#            Other           #
-##############################
+# Misc.
 alias ffs="sudo !!"
