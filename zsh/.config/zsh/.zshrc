@@ -41,9 +41,13 @@ stty stop undef
 unsetopt BEEP
 
 # History
-HISTSIZE=2500
-SAVEHIST=2500
+HISTSIZE=1000000
+SAVEHIST=$HISTSIZE
 HISTFILE=~/.cache/.histfile
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
 
 # Autocompletion
 autoload -Uz compinit
@@ -59,6 +63,7 @@ _comp_options+=(globdots)
 
 # Plugins
 [ -f "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh" ] && source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 # NVM
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
