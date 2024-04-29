@@ -10,8 +10,6 @@
 # to the user's home directory starting with `~/`.
 #import:
 #  - /path/to/alacritty.yml
-import:
-  - ~/.config/alacritty/themes/mellow.yaml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -39,13 +37,13 @@ window:
   # Window padding
   padding:
     x: 0
-    y: 3
+    y: 0
 
   # Spread
   dynamic_padding: false
 
   # Opacity
-  opacity: 0.95
+  opacity: 1
 
   # Window decorations
   #
