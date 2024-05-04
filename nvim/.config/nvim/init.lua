@@ -22,6 +22,18 @@ require("lazy").setup({
     "tpope/vim-sleuth",
 
     {
+        "catppuccin/nvim",
+        config = function()
+            vim.cmd("colorscheme catppuccin-mocha")
+        end
+    },
+
+    {
+        "lewis6991/gitsigns.nvim",
+        opts = {},
+    },
+
+    {
         "laytan/cloak.nvim",
         opts = {
             enabled = true,
@@ -54,22 +66,8 @@ require("lazy").setup({
         "f-person/git-blame.nvim",
         opts = {
             enabled = true,
-            delay = 250,
+            delay = 200,
         },
-    },
-
-    {
-        "lewis6991/gitsigns.nvim",
-        opts = {},
-    },
-
-    {
-        "mellow-theme/mellow.nvim",
-        name = "mellow",
-        priority = 1000,
-        config = function()
-            vim.cmd([[colorscheme mellow]])
-        end,
     },
 
     {
@@ -227,6 +225,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
         vim.keymap.set("n", "gR", vim.lsp.buf.rename, opts)
-        vim.keymap.set("n", "gF", vim.lsp.buf.code_action, opts)
+        vim.keymap.set("n", "gf", vim.lsp.buf.code_action, opts)
+        vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
+        vim.keymap.set("n", "gF", vim.lsp.buf.format, opts)
+        vim.keymap.set("n", "gr", vim.lsp.buf.references)
     end,
 })
+
