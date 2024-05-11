@@ -173,6 +173,7 @@ vim.keymap.set("i", "<right>", "<nop>")
 
 -- [[ Keybinds ]]
 vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>ct", ":CloakToggle<Cr>")
 
 local cmp = require("cmp")
 
