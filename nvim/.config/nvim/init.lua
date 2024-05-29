@@ -22,9 +22,30 @@ require("lazy").setup({
     "tpope/vim-sleuth",
 
     {
-        "catppuccin/nvim",
+        "savq/melange-nvim",
         config = function()
-            vim.cmd("colorscheme catppuccin-mocha")
+            vim.cmd("colorscheme melange")
+        end
+    },
+
+    {
+        "folke/zen-mode.nvim",
+        opts = {},
+    },
+
+    {
+        "andweeb/presence.nvim",
+        opts = {
+            auto_update = true,
+        },
+    },
+
+    {
+        "lukas-reineke/virt-column.nvim",
+        config = function()
+            vim.opt.colorcolumn = '81'
+            vim.cmd[[highlight clear ColorColumn]]
+            require('virt-column').setup()
         end
     },
 
@@ -174,6 +195,7 @@ vim.keymap.set("i", "<right>", "<nop>")
 -- [[ Keybinds ]]
 vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>ct", ":CloakToggle<Cr>")
+vim.keymap.set("n", "<leader>z", ":ZenMode<Cr>")
 
 local cmp = require("cmp")
 
