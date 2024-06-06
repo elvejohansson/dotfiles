@@ -22,22 +22,17 @@ require("lazy").setup({
     "tpope/vim-sleuth",
 
     {
-        "savq/melange-nvim",
+        "catppuccin/nvim",
         config = function()
-            vim.cmd("colorscheme melange")
+            vim.cmd("colorscheme catppuccin-mocha")
+            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
         end
     },
 
     {
         "folke/zen-mode.nvim",
         opts = {},
-    },
-
-    {
-        "andweeb/presence.nvim",
-        opts = {
-            auto_update = true,
-        },
     },
 
     {
