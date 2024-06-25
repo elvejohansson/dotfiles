@@ -16,6 +16,8 @@ if [[ $(uname) == "Darwin" ]] then
     export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 
     export ANDROID_HOME="$HOME/Library/Android/sdk"
+    export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
+    export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
 fi
 
 . "$HOME/.cargo/env"

@@ -7,11 +7,15 @@ alias ealias="$EDITOR $ZDOTDIR/alias.zsh"
 alias gs="git status"
 alias ga="git add"
 alias gaa="git add -A"
+alias gam="git ls-files --modified | xargs git add"
 alias gb="git branch -a"
 alias gc="git commit -s"
 alias gd="git diff HEAD"
 alias gds="git diff HEAD --staged"
 alias gprune="git fetch --prune origin"
+
+# Android
+alias adb='/Users/$USER/Library/Android/sdk/platform-tools/adb'
 
 # Kubernetes
 alias get-clusters="kubectl config get-contexts"
