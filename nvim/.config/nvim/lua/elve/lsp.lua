@@ -1,3 +1,25 @@
+local cmp = require("cmp")
+
+cmp.setup({
+    snippet = {
+        expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+        end,
+    },
+    window = {},
+    mapping = cmp.mapping.preset.insert({
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-e>"] = cmp.mapping.abort(),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    }),
+    sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "vsnip" },
+    }, {
+        { name = "buffer" },
+    }),
+})
+
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
@@ -7,14 +29,19 @@ require("mason-lspconfig").setup({
         "gopls",
         "tsserver",
         "eslint",
+        "jsonls"
     },
 })
 
 require("neodev").setup()
 
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 require("mason-lspconfig").setup_handlers({
     function(server_name)
-        require("lspconfig")[server_name].setup({})
+        require("lspconfig")[server_name].setup({
+            capabilities = capabilities,
+        })
     end,
 })
 
