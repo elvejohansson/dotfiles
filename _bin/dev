@@ -1,0 +1,68 @@
+#!/bin/sh
+set -e
+
+HOMEBREW_NO_AUTO_UPDATE=1
+
+OS=$(uname)
+DOTFILES_DIR="$HOME/dotfiles"
+
+if [ $OS != "Darwin" ]; then
+    echo "script doesn't support ${OS}"
+    exit 1
+fi
+
+echo "[1/4] Running pre-flight checks.\n"
+
+if ! [ -x "$(command -v brew)" ]; then
+    echo "Homebrew not installed, installing..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+    echo "✓ Homebrew installed"
+fi
+
+if ! [ -x "$(command -v git)" ]; then
+    echo "Git not installed, installing..."
+    brew install git --quiet
+else
+    echo "✓ Git installed"
+fi
+
+if ! [ -x "$(command -v stow)" ]; then
+    echo "Stow not installed, installing..."
+    brew install git --quiet
+else
+    echo "✓ Stow installed"
+fi
+
+echo "\n[2/4] Checking SSH credentials.\n"
+
+if ! [[ -f "$HOME/.ssh/id_rsa" ]]; then
+    echo "No SSH key present, generating..."
+    mkdir -p "$HOME/.ssh"
+    chmod 700 "$HOME/.ssh"
+    ssh-keygen -b 4096 -t rsa -f "$HOME/.ssh/id_rsa" -N '' -C "$USER@$USER" > /dev/null
+else
+    echo "✓ SSH key present"
+fi
+
+echo "\n[3/4] Fetching latest dotfiles.\n"
+if ! [[ -d "$DOTFILES_DIR" ]]; then
+    echo "Dotfiles not present, cloning..."
+    git clone --quiet "git@github.com:elvejohansson/dotfiles.git" "$DOTFILES_DIR" > /dev/null
+else
+    git -C "$DOTFILES_DIR" pull
+fi
+
+cd $DOTFILES_DIR
+
+echo "\n[4/4] Symlinking dotfiles.\n"
+STOW_FOLDERS="$(ls -d */ | grep -v _* | tr -d '\n' | sed 's/\// /g')"
+for folder in $STOW_FOLDERS
+do
+    # FIXME: This may break if there are files in the target folder, could be
+    # solved by using --adopt + git reset, but I don't really like that solution
+    echo "✓ Stowing $folder"
+    stow -D $folder
+    stow $folder
+done
+
