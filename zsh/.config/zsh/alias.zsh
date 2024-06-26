@@ -2,6 +2,7 @@
 alias rconf="source $ZDOTDIR/.zshrc"
 alias econf="$EDITOR $ZDOTDIR/.zshrc"
 alias ealias="$EDITOR $ZDOTDIR/alias.zsh"
+alias zup="$ZDOTDIR/update_plugins.sh"
 
 # Git
 alias gs="git status"
